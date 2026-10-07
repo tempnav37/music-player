@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player Playlist & Queue Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Made by:- Om Mandlik</p>
+          <h1>Music Player Playlist & Queue Manager</h1>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="hero card">
+          <div class="artwork">♫</div>
+          <div class="track-meta">
+            <p class="label">Now Playing</p>
+            <h2 id="now-playing-title">Loading…</h2>
+            <p id="now-playing-artist">—</p>
+            <p id="now-playing-album">—</p>
+            <div class="time-row">
+              <span id="current-time">00:00</span>
+              <div class="progress-track">
+                <div id="progress-bar" class="progress-bar"></div>
+              </div>
+              <span id="total-time">00:00</span>
+            </div>
+            <div class="transport-controls">
+              <button id="previous-btn" class="secondary-btn">Previous</button>
+              <button id="play-btn" class="primary-btn">Play</button>
+              <button id="next-btn" class="secondary-btn">Next</button>
+            </div>
+            <div class="mode-controls">
+              <button id="shuffle-btn" class="secondary-btn">Shuffle</button>
+              <button id="repeat-btn" class="secondary-btn">Repeat: All</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel card">
+          <div class="panel-header">
+            <h3>My Playlist</h3>
+            <button id="clear-playlist-btn" class="ghost-btn">Clear Playlist</button>
+          </div>
+          <ul id="playlist-list" class="playlist-list"></ul>
+        </section>
+
+        <section class="panel card">
+          <div class="panel-header">
+            <h3>Up Next</h3>
+            <button id="clear-queue-btn" class="ghost-btn">Clear Queue</button>
+          </div>
+          <ul id="queue-list" class="queue-list"></ul>
+        </section>
+
+        <section class="panel card wide-panel">
+          <div class="panel-header">
+            <h3>Linked List Visualization</h3>
+          </div>
+          <div id="visualization" class="visualization"></div>
+          <div class="neighbor-boxes">
+            <div class="neighbor-card">
+              <span class="neighbor-label">Previous</span>
+              <strong id="previous-label">—</strong>
+            </div>
+            <div class="neighbor-card current-card">
+              <span class="neighbor-label">Current</span>
+              <strong id="current-label">—</strong>
+            </div>
+            <div class="neighbor-card">
+              <span class="neighbor-label">Next</span>
+              <strong id="next-label">—</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel card wide-panel">
+          <div class="panel-header">
+            <h3>Why this is a Circular Doubly Linked List</h3>
+          </div>
+          <div class="explain-box">
+            <p><strong>Why Circular?</strong> The final track points back to the first track, so playback naturally loops.</p>
+            <p><strong>Why Doubly Linked?</strong> Each track stores both <code>prev</code> and <code>next</code> references for direct backward and forward navigation.</p>
+            <p><strong>Complexity:</strong> <code>Next</code> and <code>Previous</code> are O(1), while finding a track by ID is O(n).</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

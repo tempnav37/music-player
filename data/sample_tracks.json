@@ -1,0 +1,14 @@
+[
+  {"id": 1, "title": "Midnight Drive", "artist": "Sample Artist", "album": "Night Echoes", "duration": 215, "genre": "Pop"},
+  {"id": 2, "title": "Neon Harbor", "artist": "Coastal Echo", "album": "City Lights", "duration": 243, "genre": "Synthwave"},
+  {"id": 3, "title": "Velvet Rain", "artist": "Moonlit Avenue", "album": "Slow Bloom", "duration": 198, "genre": "Indie"},
+  {"id": 4, "title": "Sunset Signal", "artist": "Golden Circuit", "album": "Afterglow", "duration": 224, "genre": "Electronic"},
+  {"id": 5, "title": "Paper Lanterns", "artist": "Harbor Bloom", "album": "Warm Lights", "duration": 271, "genre": "Folk"},
+  {"id": 6, "title": "Glass Horizon", "artist": "Skyline Arcade", "album": "Dream District", "duration": 205, "genre": "Alt Pop"},
+  {"id": 7, "title": "Crimson Threads", "artist": "Signal Run", "album": "Anomaly", "duration": 232, "genre": "Rock"},
+  {"id": 8, "title": "Quiet Echo", "artist": "Northline", "album": "Static Summer", "duration": 188, "genre": "Ambient"},
+  {"id": 9, "title": "Cinder Avenue", "artist": "Velvet Circuit", "album": "Chrome Bloom", "duration": 249, "genre": "Electro"},
+  {"id": 10, "title": "Paper Skies", "artist": "Daybreak Note", "album": "Open Window", "duration": 212, "genre": "Acoustic"},
+  {"id": 11, "title": "Ocean Memory", "artist": "Silver Harbor", "album": "Tide Maps", "duration": 261, "genre": "Chill"},
+  {"id": 12, "title": "Golden Hour Loop", "artist": "Luma Field", "album": "After Hours", "duration": 234, "genre": "Pop"}
+]

@@ -1,0 +1,369 @@
+:root {
+  --bg: #0b1020;
+  --panel: #101a2f;
+  --panel-alt: #162544;
+  --accent: #7c9cff;
+  --accent-strong: #92f5c8;
+  --text: #edf4ff;
+  --muted: #9bb1d1;
+  --danger: #ff6b7a;
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0d1325 0%, #10192d 100%);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 3rem;
+}
+
+.topbar {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  color: var(--accent-strong);
+  font-size: 0.7rem;
+  margin-bottom: 0.4rem;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 0;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.card, .panel {
+  background: rgba(16, 26, 47, 0.9);
+  border: 1px solid rgba(124, 156, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px var(--shadow);
+}
+
+.hero {
+  grid-column: 1 / span 12;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.6rem;
+}
+
+@media (min-width: 780px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.artwork {
+  width: 180px;
+  height: 180px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  color: #08111e;
+  font-weight: bold;
+}
+
+.track-meta {
+  flex: 1;
+}
+
+.label {
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  font-size: 0.75rem;
+}
+
+#now-playing-title {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  margin-bottom: 0.4rem;
+}
+
+.transport-controls,
+.mode-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--accent), #84d7ff);
+  color: #091321;
+}
+
+.secondary-btn {
+  background: rgba(128, 149, 204, 0.12);
+  color: var(--text);
+  border: 1px solid rgba(149, 169, 219, 0.3);
+}
+
+.ghost-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(149, 169, 219, 0.3);
+}
+
+.time-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.progress-track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(224, 233, 255, 0.12);
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-strong), var(--accent));
+}
+
+.panel {
+  padding: 1.2rem;
+}
+
+.panel:nth-of-type(2) {
+  grid-column: 1 / span 6;
+}
+
+.panel:nth-of-type(3) {
+  grid-column: 7 / span 6;
+}
+
+.wide-panel {
+  grid-column: 1 / span 12;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.playlist-list,
+.queue-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.track-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: rgba(141, 161, 206, 0.08);
+  padding: 0.8rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+
+.track-row.current {
+  border-color: rgba(146, 245, 200, 0.8);
+  box-shadow: inset 0 0 0 1px rgba(146, 245, 200, 0.5);
+}
+
+.track-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.track-index {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(124, 156, 255, 0.12);
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.track-info {
+  min-width: 0;
+}
+
+.track-title {
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.track-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 0.45rem 0.65rem;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  background: rgba(132, 172, 255, 0.12);
+  color: var(--text);
+}
+
+.action-btn.delete {
+  background: rgba(255, 107, 122, 0.12);
+  color: #ffc2ca;
+}
+
+.visualization {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.node-card {
+  min-width: 140px;
+  padding: 0.8rem 0.9rem;
+  border-radius: 14px;
+  background: rgba(124, 156, 255, 0.12);
+  border: 1px solid rgba(124, 156, 255, 0.22);
+}
+
+.node-card.current {
+  background: rgba(146, 245, 200, 0.12);
+  border-color: rgba(146, 245, 200, 0.4);
+}
+
+.node-card.head {
+  box-shadow: 0 0 0 2px rgba(255, 209, 102, 0.35);
+}
+
+.node-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.tag {
+  background: rgba(255, 209, 102, 0.18);
+  color: #fbe8a1;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  padding: 0.22rem 0.5rem;
+}
+
+.node-links {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.neighbor-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.neighbor-card {
+  background: rgba(130, 148, 194, 0.08);
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+}
+
+.current-card {
+  background: rgba(146, 245, 200, 0.12);
+}
+
+.neighbor-label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.explain-box {
+  color: var(--muted);
+  display: grid;
+  gap: 0.5rem;
+}
+
+code {
+  font-family: Consolas, monospace;
+  color: var(--accent-strong);
+}
+
+.empty-state {
+  color: var(--muted);
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .track-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .track-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
